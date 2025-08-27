@@ -1,42 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Fashion E-commerce Design System */
 
 @layer base {
   :root {
+    /* Core Brand Colors */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
+    --foreground: 0 0% 9%;
+    
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+    
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 9%;
+    
+    /* Luxury Accent */
+    --luxury: 45 85% 58%;
+    --luxury-foreground: 0 0% 9%;
+    
+    /* Muted Tones */
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+    
+    --accent: 0 0% 96%;
+    --accent-foreground: 0 0% 9%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 0 0% 9%;
+    
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
+    --card-foreground: 0 0% 9%;
+    
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
+    --popover-foreground: 0 0% 9%;
+    
     --radius: 0.5rem;
+    
+    /* Fashion-specific tokens */
+    --hero-gradient: linear-gradient(135deg, hsl(0 0% 100%) 0%, hsl(0 0% 96%) 100%);
+    --luxury-gradient: linear-gradient(135deg, hsl(45 85% 58%) 0%, hsl(35 75% 48%) 100%);
+    --shadow-elegant: 0 4px 20px -2px hsl(0 0% 0% / 0.05);
+    --shadow-product: 0 8px 30px -4px hsl(0 0% 0% / 0.1);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-spring: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +114,32 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-inter;
+  }
+}
+
+@layer components {
+  /* Fashion-specific component styles */
+  .fashion-hero {
+    @apply bg-gradient-to-br from-background to-secondary;
+  }
+  
+  .luxury-button {
+    @apply bg-luxury text-luxury-foreground hover:opacity-90 transition-all duration-300;
+  }
+  
+  .product-card {
+    @apply bg-card rounded-lg overflow-hidden group cursor-pointer;
+    box-shadow: var(--shadow-elegant);
+    transition: var(--transition-smooth);
+  }
+  
+  .product-card:hover {
+    box-shadow: var(--shadow-product);
+    transform: translateY(-2px);
+  }
+  
+  .elegant-text {
+    @apply font-playfair text-foreground;
   }
 }

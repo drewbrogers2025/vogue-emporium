@@ -18,6 +18,10 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				'inter': ['Inter', 'sans-serif'],
+				'playfair': ['Playfair Display', 'serif'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -31,6 +35,10 @@ export default {
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary))',
 					foreground: 'hsl(var(--secondary-foreground))'
+				},
+				luxury: {
+					DEFAULT: 'hsl(var(--luxury))',
+					foreground: 'hsl(var(--luxury-foreground))'
 				},
 				destructive: {
 					DEFAULT: 'hsl(var(--destructive))',
