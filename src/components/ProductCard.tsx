@@ -36,7 +36,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
   };
 
   return (
-    <div className="product-card">
+    <div className="product-card group">
       <div className="relative overflow-hidden">
         <img
           src={product.image}

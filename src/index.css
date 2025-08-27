@@ -129,7 +129,7 @@
   }
   
   .product-card {
-    @apply bg-card rounded-lg overflow-hidden group cursor-pointer;
+    @apply bg-card rounded-lg overflow-hidden cursor-pointer;
     box-shadow: var(--shadow-elegant);
     transition: var(--transition-smooth);
   }
